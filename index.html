@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouMeal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <main class="main">
+        <section class="hero">
+            <div class="hero__header">
+                <h2 class="hero__header-name">YourMeal</h2>
+                <svg class="hero__header-logo" width="33px" height="33px" aria-hidden="true">
+                    <use href="images/icons.svg#icon-logo"></use>
+                </svg>
+            </div>
+            <h1 class="hero__title">Тільки найсоковитіші <span class="hero__title-span">бургери!!</span>
+            </h1>
+            <p class="hero__text">Безкоштовна доставка від <span class="hero__text-span">500₴</span></p>
+            <div class="hero__img-box">
+                <img class="hero__img" src="/images/g10.png" alt="Burger">
+            </div>            
+        </section> 
+        <section class="categories">
+            <ul class="categories__container">
+                <li class="categories__menu">                
+                    <img src="/images/burger-menu.png" alt="">
+                    <p class="categories__menu-text">Бургери</p>
+                </li>
+                <li class="categories__menu">
+                    <img src="/images/onion-menu.png" alt="">
+                    <p class="categories__menu-text">Закуски</p>
+                </li>
+                <li class="categories__menu">
+                    <img src="/images/hot-dog-menu.png" alt="">
+                    <p class="categories__menu-text">Хотдоги</p>
+                </li>
+                <li class="categories__menu">
+                    <img src="/images/fast-food-menu.png" alt="">
+                    <p class="categories__menu-text">Комбо</p>
+                </li>
+                <li class="categories__menu">
+                    <img src="/images/burrito-menu.png" alt="">
+                    <p class="categories__menu-text">Шаурма</p>
+                </li>
+                <li class="categories__menu">
+                    <img src="/images/pizza-menu.png" alt="">
+                    <p class="categories__menu-text">Піцца</p>
+                </li>
+                <li class="categories__menu">
+                    <img src="/images/noodles-menu.png" alt="">
+                    <p class="categories__menu-text">Вок</p>
+                </li>
+            </ul>
+            <div class="basket">
+                <button class="basket__btn">
+                    Корзина
+                    <p class="basket__sum">
+                        4
+                    </p>
+                </button>
+                <div class="basket__modal">
+                    <div class="modal__title">
+                        <p class="basket__name">Корзина</p>
+                        <p class="basket__sum">4</p>
+                    </div>
+                    <ul class="modal__list">
+                        <li class="modal__item">
+                            <div class="modal__burger-preview">
+                                <img class="modal__burger-img" src="/images/rectangle.png" width="64px" height="52px" alt="">
+                            <div>
+                                <p class="modal__burger-name">Супер сирний</p>
+                                <p class="modal__burger-weight">512г</p>
+                                <p class="modal__burger-cost">350₴</p>
+                            </div>
+                            </div>
+                            <div class="modal__counter">
+                                <div class="modal__counter-numbers">-</div>
+                                <div class="modal__counter-numbers">1</div>
+                                <div class="modal__counter-numbers">+</div>
+                            </div>
+                        </li>
+                        <li class="modal__item">
+                            <div class="modal__burger-preview">
+                                <img class="modal__burger-img" src="/images/rectangle.png" width="64px" height="52px" alt="">
+                            <div>
+                                <p class="modal__burger-name">Супер сирний</p>
+                                <p class="modal__burger-weight">512г</p>
+                                <p class="modal__burger-cost">350₴</p>
+                            </div>
+                            </div>
+                            <div class="modal__counter">
+                                <div class="modal__counter-numbers">-</div>
+                                <div class="modal__counter-numbers">2</div>
+                                <div class="modal__counter-numbers">+</div>
+                            </div>
+                        </li>
+                        <li class="modal__item">
+                            <div class="modal__burger-preview">
+                                <img class="modal__burger-img" src="/images/rectangle.png" width="64px" height="52px" alt="">
+                            <div>
+                                <p class="modal__burger-name">Супер сирний</p>
+                                <p class="modal__burger-weight">512г</p>
+                                <p class="modal__burger-cost">350₴</p>
+                            </div>
+                            </div>
+                            <div class="modal__counter">
+                                <div class="modal__counter-numbers">-</div>
+                                <div class="modal__counter-numbers">1</div>
+                                <div class="modal__counter-numbers">+</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="modal__total">
+                        <p class="modal__total-text">Всього</p>
+                        <p class="modal__total-text modal__total-sum">1400₴</p>
+                    </div>
+                    <button class="modal__btn">Оформити замовлення</button>
+                    <div class="modal__end">
+                        <div class="modal__end-container">
+                            <img class="modal__end-img" src="/images/delivery.svg" width="24px" height="24px" alt="">                            
+                            <p class="modal__end-text">Безкоштовна доставка</p>
+                        </div>
+                        <p class="modal__end-close">Згорнути</p>
+                    </div>
+                </div>
+            </div>            
+        </section> 
+        <section class="food">
+            <div class="food__container">
+                <h2 class="food__title">Бургери</h2>
+                <ul class="food__burger-list">
+                    <li class="food__burger-item">
+                        <img class="food__burger-img" src="/images/burger-bomba.png" width="137px" height="120px" alt="">
+                        <p class="food__burger-cost">350₴</p>
+                        <p class="food__burger-name">М'ясна бомба</p>
+                        <p class="food__burger-weight">520г</p>
+                        <button class="food__burger-btn">Додати</button>
+                    </li>
+                    <li class="food__burger-item">
+                        <img class="food__burger-img" src="/images/burger-bomba.png" width="137px" height="120px" alt="">
+                        <p class="food__burger-cost">350₴</p>
+                        <p class="food__burger-name">М'ясна бомба</p>
+                        <p class="food__burger-weight">520г</p>
+                        <button class="food__burger-btn">Додати</button>
+                    </li>
+                    <li class="food__burger-item">
+                        <img class="food__burger-img" src="/images/burger-bomba.png" width="137px" height="120px" alt="">
+                        <p class="food__burger-cost">350₴</p>
+                        <p class="food__burger-name">М'ясна бомба</p>
+                        <p class="food__burger-weight">520г</p>
+                        <button class="food__burger-btn">Додати</button>
+                    </li>
+                    <li class="food__burger-item">
+                        <img class="food__burger-img" src="/images/burger-bomba.png" width="137px" height="120px" alt="">
+                        <p class="food__burger-cost">350₴</p>
+                        <p class="food__burger-name">М'ясна бомба</p>
+                        <p class="food__burger-weight">520г</p>
+                        <button class="food__burger-btn">Додати</button>
+                    </li>
+                </ul>
+            </div>
+
+
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__logo">
+                <svg class="" width="150px" height="24px" aria-hidden="true">
+                    <use href="images/icons.svg#icon-yourmeal"></use>
+                </svg>
+                <svg class="" width="38px" height="36px" aria-hidden="true">
+                    <use href="images/icons.svg#icon-logo-footer"></use>
+                </svg>
+            </div>
+            <div class="footer__contact">
+                <p class="footer__contact-text">Номер для заказу</p>
+                <div class="footer__contact-call">
+                    <svg class="footer__contact-icon" width="18px" height="18px" aria-hidden="true">
+                        <use href="images/icons.svg#icon-call"></use>
+                    </svg>
+                    <a class="footer__contact-link" href="">+8(055)555-55-55</a>
+                </div>
+            </div>
+            <div class="footer__networks">
+                <p class="footer__networks-text">Ми в соцмережах</p>
+                <div class="footer__networks-links-container">
+                    <a href="" class="footer__networks-links">
+                        <svg class="footer__networks-icon" width="36px" height="36px" aria-hidden="true">
+                            <use href="images/icons.svg#icon-telegram"></use>
+                        </svg>
+                    </a>
+                    <a href="" class="footer__networks-links">
+                        <svg class="footer__networks-icon" width="36px" height="36px" aria-hidden="true">
+                            <use href="images/icons.svg#icon-instagram"></use>
+                        </svg>
+                    </a>
+                    <a href="" class="footer__networks-links">
+                        <svg class="footer__networks-icon" width="36px" height="36px" aria-hidden="true">
+                            <use href="images/icons.svg#icon-linkedin"></use>
+                        </svg>
+                    </a>
+                </div>                
+            </div>
+            <div class="footer__terms">
+                <p class="footer__terms-text">© YouMeal, 2022</p>
+                <p class="footer__terms-text">Design: Anastasia Ilina</p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script src="modal.js"></script>
+</html>
