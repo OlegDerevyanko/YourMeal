@@ -553,7 +553,7 @@ fieldset {
 }
 .fieldset__input:checked+label::before {
     border-color: #F2F2F3;
-    background-image: url(/images/Group-9.svg);
+    background-image: url(./images/Group-9.svg);
 }
 .fieldset__label {
     font-family: Nunito;
