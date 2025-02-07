@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS - Стилизация радиокнопки</title>
+  <style>
+    /* для элемента input c type="radio" */
+  .fieldset__input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  /* для элемента label связанного с .custom-radio */
+  .fieldset__input+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+  }
+
+  /* создание в label псевдоэлемента  before со следующими стилями */
+  .fieldset__input+label::before {
+    content: '';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #F2F2F3;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+  }
+
+  /* стили при наведении курсора на радио */
+  .fieldset__input:not(:disabled):not(:checked)+label:hover::before {
+    border-color: #F2F2F3;
+  }
+
+  /* стили для активной радиокнопки (при нажатии на неё) */
+  .fieldset__input:not(:disabled):active+label::before {
+    background-color: #FFFFFF;;
+    border-color: #F2F2F3;
+  }
+
+  /* стили для радиокнопки, находящейся в состоянии checked */
+  .fieldset__input:checked+label::before {
+    border-color: #F2F2F3;
+    background-image: url(/images/Group-9.svg);
+  }
+
+    body {
+      padding: 20px 50px;
+    }
+
+    .radio {
+      margin-bottom: 0.4em;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="radio">
+    <input class="custom-radio" type="radio" id="color-1" name="color" value="indigo" checked>
+    <label for="color-1">Indigo</label>
+  </div>
+
+  <div class="radio">
+    <input class="custom-radio" type="radio" id="color-2" name="color" value="red">
+    <label for="color-2">Red</label>
+  </div>
+
+  
+
+  <div class="radio">
+    <input class="custom-radio" type="radio" id="color-4" name="color" value="yellow">
+    <label for="color-4">Yellow</label>
+  </div>
+
+  <div class="radio">
+    <input class="custom-radio" type="radio" id="color-5" name="color" value="green">
+    <label for="color-5">Green</label>
+  </div>
+
+</body>
+
+</html>
+						

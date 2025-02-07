@@ -54,69 +54,26 @@
                     <img src="./images/noodles-menu.png" alt="">
                     <p class="categories__menu-text">Вок</p>
                 </li>
-            </ul>
+            </ul>            
             <div class="basket">
                 <button class="basket__btn">
                     Корзина
-                    <p class="basket__sum">
-                        4
-                    </p>
+                    <spon class="basket__total" id="mini-cart-quantity">0</span>
                 </button>
                 <div class="basket__modal">
                     <div class="modal__title">
-                        <p class="basket__name">Корзина</p>
-                        <p class="basket__sum">4</p>
+                        <h2 class="basket__name">Корзина</h2>
+                        <span class="basket__total" id="total-quantity">0</span>
                     </div>
-                    <ul class="modal__list">
-                        <li class="modal__item">
-                            <div class="modal__burger-preview">
-                                <img class="modal__burger-img" src="./images/rectangle.png" width="64px" height="52px" alt="">
-                            <div>
-                                <p class="modal__burger-name">Супер сирний</p>
-                                <p class="modal__burger-weight">512г</p>
-                                <p class="modal__burger-cost">350₴</p>
-                            </div>
-                            </div>
-                            <div class="modal__counter">
-                                <div class="modal__counter-numbers">-</div>
-                                <div class="modal__counter-numbers">1</div>
-                                <div class="modal__counter-numbers">+</div>
-                            </div>
-                        </li>
-                        <li class="modal__item">
-                            <div class="modal__burger-preview">
-                                <img class="modal__burger-img" src="./images/rectangle.png" width="64px" height="52px" alt="">
-                            <div>
-                                <p class="modal__burger-name">Супер сирний</p>
-                                <p class="modal__burger-weight">512г</p>
-                                <p class="modal__burger-cost">350₴</p>
-                            </div>
-                            </div>
-                            <div class="modal__counter">
-                                <div class="modal__counter-numbers">-</div>
-                                <div class="modal__counter-numbers">2</div>
-                                <div class="modal__counter-numbers">+</div>
-                            </div>
-                        </li>
-                        <li class="modal__item">
-                            <div class="modal__burger-preview">
-                                <img class="modal__burger-img" src="./images/rectangle.png" width="64px" height="52px" alt="">
-                            <div>
-                                <p class="modal__burger-name">Супер сирний</p>
-                                <p class="modal__burger-weight">512г</p>
-                                <p class="modal__burger-cost">350₴</p>
-                            </div>
-                            </div>
-                            <div class="modal__counter">
-                                <div class="modal__counter-numbers">-</div>
-                                <div class="modal__counter-numbers">1</div>
-                                <div class="modal__counter-numbers">+</div>
-                            </div>
-                        </li>
+                    <ul class="modal__list" id="cart-items">
+
                     </ul>
                     <div class="modal__total">
                         <p class="modal__total-text">Всього</p>
-                        <p class="modal__total-text modal__total-sum">1400₴</p>
+                        <p class="modal__total-text total-price">
+                            <span id="total-price">0</span>₴
+                        </p>
+                        
                     </div>
                     <button class="modal__btn">Оформити замовлення</button>
                     <div class="modal__end">
@@ -125,6 +82,40 @@
                             <p class="modal__end-text">Безкоштовна доставка</p>
                         </div>
                         <p class="modal__end-close">Згорнути</p>
+                    </div>
+                    <div class="delivery__modal">
+                        <div class="delivery__modal-container">
+                            <div class="delivery__modal-header">
+                                <h2 class="delivery__modal-title">Доставка</h2>
+                                <input class="delivery__modal-input-name" type="text" name="name" placeholder="Ваше і'мя" required minlength="4"/>
+                                <input class="delivery__modal-input-tel" type="tel" name="phone" placeholder="Номер телефону" required minlength="7"/>
+                                <fieldset>
+                                    <div class="fieldset__containers input__pickup">
+                                        <input class="fieldset__input " type="radio" id="pickup"
+                                        name="delivery" value="pickup" checked />
+                                        <label class="fieldset__label" for="pickup">Самовивіз</label>
+                                    </div>
+                                    <div class="fieldset__containers">
+                                        <input class="fieldset__input input__delivery" type="radio" id="delivery" 
+                                        name="delivery" value="delivery"/>
+                                        <label class="fieldset__label" for="delivery">Доставка</label>
+                                    </div>
+                                </fieldset>
+                                <div class="delivery__modal-delivery">
+                                    <input class="delivery__modal-input-address" type="text" name="address" placeholder="Вулиця" required minlength="4" />
+                                <div class="delivery__modal-input2-container">
+                                    <input class="delivery__modal-input-address" type="text" name="address" placeholder="№ Будинку"/>
+                                    <input class="delivery__modal-input-address" type="text" name="address" placeholder="Квартира"/>
+                                </div>
+                                </div>
+                            </div>            
+                            <button type="submit" class="delivery__modal-btn">Оформити</button>
+                            <div class="delivery__modal-close-btn">
+                                <svg class="delivery__modal-close-icon" width="24px" height="24px" aria-hidden="true">
+                                    <use href="./images/icons.svg#icon-close"></use>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>            
@@ -135,30 +126,30 @@
                 <ul class="food__burger-list">
                     <li class="food__burger-item">
                         <img class="food__burger-img" src="./images/burger-bomba.png" width="137px" height="120px" alt="">
-                        <p class="food__burger-cost">350₴</p>
+                        <p class="food__burger-price">350₴</p>
                         <p class="food__burger-name">М'ясна бомба</p>
-                        <p class="food__burger-weight">520г</p>
+                        <p class="food__burger-weight">512г</p>
                         <button class="food__burger-btn">Додати</button>
                     </li>
                     <li class="food__burger-item">
-                        <img class="food__burger-img" src="./images/burger-bomba.png" width="137px" height="120px" alt="">
-                        <p class="food__burger-cost">350₴</p>
-                        <p class="food__burger-name">М'ясна бомба</p>
-                        <p class="food__burger-weight">520г</p>
+                        <img class="food__burger-img" src="./images/burger-italian.png" width="137px" height="120px" alt="">
+                        <p class="food__burger-price">300₴</p>
+                        <p class="food__burger-name">Італьянський</p>
+                        <p class="food__burger-weight">480г</p>
                         <button class="food__burger-btn">Додати</button>
                     </li>
                     <li class="food__burger-item">
-                        <img class="food__burger-img" src="./images/burger-bomba.png" width="137px" height="120px" alt="">
-                        <p class="food__burger-cost">350₴</p>
-                        <p class="food__burger-name">М'ясна бомба</p>
-                        <p class="food__burger-weight">520г</p>
+                        <img class="food__burger-img" src="./images/burger-super.png" width="137px" height="120px" alt="">
+                        <p class="food__burger-price">280₴</p>
+                        <p class="food__burger-name">Ситний</p>
+                        <p class="food__burger-weight">580г</p>
                         <button class="food__burger-btn">Додати</button>
                     </li>
                     <li class="food__burger-item">
-                        <img class="food__burger-img" src="./images/burger-bomba.png" width="137px" height="120px" alt="">
-                        <p class="food__burger-cost">350₴</p>
-                        <p class="food__burger-name">М'ясна бомба</p>
-                        <p class="food__burger-weight">520г</p>
+                        <img class="food__burger-img" src="./images/burger-cheese.png" width="137px" height="120px" alt="">
+                        <p class="food__burger-price">320₴</p>
+                        <p class="food__burger-name">Супер Сирний</p>
+                        <p class="food__burger-weight">510г</p>
                         <button class="food__burger-btn">Додати</button>
                     </li>
                 </ul>
@@ -212,6 +203,47 @@
             </div>
         </div>
     </footer>
+    
+  
+    <!-- Карточки товаров -->
+    <!-- <ul class="food__burger-list">
+        <li class="food__burger-item">
+            <img class="food__burger-img" src="./images/burger-bomba.png" width="137px" height="120px" alt="Мясная бомба">
+            <p class="food__burger-price">350₴</p>
+            <p class="food__burger-name">Мясная бомба</p>
+            <p class="food__burger-weight">520г</p>
+            <button class="food__burger-btn">добавить</button>
+        </li>
+        <li class="food__burger-item">
+            <img class="food__burger-img" src="./images/burger-bomba.png" width="137px" height="120px" alt="Сырный взрыв">
+            <p class="food__burger-price">300₴</p>
+            <p class="food__burger-name">Сырный взрыв</p>
+            <p class="food__burger-weight">480г</p>
+            <button class="food__burger-btn">добавить</button>
+        </li>
+        <li class="food__burger-item">
+            <img class="food__burger-img" src="./images/burger-bomba.png" width="137px" height="120px" alt="Куриный микс">
+            <p class="food__burger-price">280₴</p>
+            <p class="food__burger-name">Куриный микс</p>
+            <p class="food__burger-weight">450г</p>
+            <button class="food__burger-btn">добавить</button>
+        </li>
+        <li class="food__burger-item">
+            <img class="food__burger-img" src="./images/burger-bomba.png" width="137px" height="120px" alt="Веганский сюрприз">
+            <p class="food__burger-price">250₴</p>
+            <p class="food__burger-name">Веганский сюрприз</p>
+            <p class="food__burger-weight">400г</p>
+            <button class="food__burger-btn">добавить</button>
+        </li>
+    </ul> -->
+
+    
+
+    
+    
+
+    
 </body>
 <script src="modal.js"></script>
+<script src="delivery-modal.js"></script>
 </html>

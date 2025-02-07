@@ -28,8 +28,14 @@ const closeModal = event => {
 const openModal = () => {
     modalElem.style.visibility = 'visible';
     modalElem.style.opacity = 1;
+    // Отключение прокрутки страницы при открытом модальном окне
+    // document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', closeModal)
 };
 
 buttonElem.addEventListener('click', openModal);
 modalElem.addEventListener('click', closeModal);
+
+
+
+
