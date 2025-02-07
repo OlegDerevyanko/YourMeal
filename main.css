@@ -37,9 +37,9 @@ ul {
 button {
     padding: 0;
 }
-.body-darken {
+/* .body-darken {
     filter: blur(2px);
-}
+} */
 
 .hero {
     display: flex;

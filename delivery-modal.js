@@ -10,7 +10,7 @@ deliveryElem.style.cssText = `
     flex-direction: column;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 1000ms ease-in-out;
+    transition: opacity 250ms ease-in-out;
 `;
 
 modalDelivery.style.cssText = `
@@ -18,7 +18,7 @@ modalDelivery.style.cssText = `
     flex-direction: column;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 1000ms ease-in-out;
+    transition: opacity 250ms ease-in-out;
 `;
 
 const closeDelivery = event => {
