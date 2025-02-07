@@ -1,5 +1,6 @@
 const buttonElem = document.querySelector('.basket__btn');
 const modalElem = document.querySelector('.basket__modal');
+const body = document.body;
 
 modalElem.style.cssText = `
     display: flex;
@@ -7,6 +8,7 @@ modalElem.style.cssText = `
     visibility: hidden;
     opacity: 0;
     transition: opacity 1000ms ease-in-out;
+    
 `;
 
 const closeModal = event => {
@@ -15,7 +17,9 @@ const closeModal = event => {
     if (target === modalElem ||        
         target.closest('.modal__end-close') ||
         event.code === 'Escape') {
-        modalElem.style.opacity = 0;  
+        modalElem.style.opacity = 0; 
+        //затемнение боди 
+        // body.classList.remove("body-darken");
 
         setTimeout(() => {
             modalElem.style.visibility = 'hidden'; 
@@ -28,6 +32,8 @@ const closeModal = event => {
 const openModal = () => {
     modalElem.style.visibility = 'visible';
     modalElem.style.opacity = 1;
+    // body.classList.add("body-darken");
+    
     // Отключение прокрутки страницы при открытом модальном окне
     // document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', closeModal)

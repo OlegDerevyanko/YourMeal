@@ -3,6 +3,7 @@ body {
     margin: 0;
     font-family: Nunito;
     letter-spacing: 0%;
+    transition: all 0.3s ease;
 }
 main {
     width: 320px;
@@ -36,7 +37,9 @@ ul {
 button {
     padding: 0;
 }
-
+.body-darken {
+    filter: blur(2px);
+}
 
 .hero {
     display: flex;
