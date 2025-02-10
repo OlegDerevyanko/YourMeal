@@ -154,9 +154,42 @@
                     </li>
                 </ul>
             </div>
-
+            <div class="food__burger-modal" id="food-modal">
+                <div class="food__burger-modal-container">
+                    <h2 class="food__burger-modal-title" >М'ясна бомба</h2>
+                    <img class="food__burger-modal-img" id="modal-img" src="./images/burger-bomba.png" width="300px" height="232px" alt="">
+                    <p class="food__burger-modal-description" id="modal-description">Супер м'ясна насолода! Велика рубана котлета зі свіжого яловичого м'яса підкорить вас своєю соковитістю, а хрумке листя салату додасть свіжості.</p>
+                    <div class="food__burger-modal-ingredients">
+                        <h3 class="food__burger-modal-ingredients-title">Склад:</h3>
+                        <ul class="food__burger-modal-ingredients-list" id="modal-ingredients">
+                            <!-- Ингредиенты будут добавлены динамически -->
+                            <li class="food__burger-modal-ingredients-item">Пшенична булочка</li>
+                            <li class="food__burger-modal-ingredients-item">Котлета з телятини</li>
+                            <li class="food__burger-modal-ingredients-item">Червона цибуля</li>
+                            <li class="food__burger-modal-ingredients-item">Листя салата</li>
+                            <li class="food__burger-modal-ingredients-item">Соус гірчичний</li> 
+                        </ul>
+                        <p class="food__burger-modal-ingredients-weight" >512г, ккал 430</p>
+                    </div>
+                    <div class="food__burger-modal-btns">
+                        <button class="food__burger-addbtn" id="modal-add-btn">Додати</button>
+                        <div class="quantity-controls">
+                            <button class="quantity-controls__btn" id="modal-decrease-btn">-</button>
+                            <span class="quantity-controls__quantity" id="modal-quantity">1</span>
+                            <button class="quantity-controls__btn" id="modal-increase-btn">+</button>
+                        </div>
+                    </div>
+                    <p class="food__burger-modal-price" >350₴</p>
+                </div>
+                <div class="food__modal-close-btn" >
+                    <svg class="food__modal-close-icon" width="24px" height="24px" aria-hidden="true">
+                        <use href="./images/icons.svg#icon-close"></use>
+                    </svg>
+                </div>
+            </div>
 
         </section>
+        
     </main>
     <footer class="footer">
         <div class="footer__container">

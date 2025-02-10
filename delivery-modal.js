@@ -3,6 +3,10 @@ const modalDelivery = document.querySelector('.delivery__modal');
 const deliveryElem = document.querySelector('.delivery__modal-delivery');
 const deliveryMenu = document.querySelector('.input__delivery');
 const deliveryMenuPickup = document.querySelector('.input__pickup');
+const burgerDescription = document.querySelector('.food__burger-modal');
+const burgerDescriptionOpen = document.querySelector('.food__burger-btn');
+
+
 
 
 deliveryElem.style.cssText = `
@@ -19,6 +23,14 @@ modalDelivery.style.cssText = `
     visibility: hidden;
     opacity: 0;
     transition: opacity 250ms ease-in-out;
+`;
+
+burgerDescription.style.cssText = `
+display: flex;
+flex-direction: column;
+visibility: hidden;
+opacity: 0;
+transition: opacity 250ms ease-in-out;
 `;
 
 const closeDelivery = event => {
@@ -53,6 +65,22 @@ const closeDeliveryMenu = event => {
     }
 }
 
+const closeBurgerDescription = event => {
+    const target = event.target;
+
+    if (target === burgerDescription ||        
+        target.closest('.food__modal-close-btn') ||
+        event.code === 'Escape') {
+            burgerDescription.style.opacity = 0;  
+
+        setTimeout(() => {
+            burgerDescription.style.visibility = 'hidden'; 
+        }, 1000);
+
+        window.removeEventListener('keydown', closeBurgerDescription);
+    }
+}
+
 const openDelivery = () => {
     modalDelivery.style.visibility = 'visible';
     modalDelivery.style.opacity = 1;
@@ -65,10 +93,18 @@ const openDeliveryMenu = () => {
     window.addEventListener('keydown', closeDeliveryMenu)
 };
 
+const openBurgerDescription = () => {
+    burgerDescription.style.visibility = 'visible';
+    burgerDescription.style.opacity = 1;
+    window.addEventListener('keydown', closeBurgerDescription)
+};
+
 buttonDelivery.addEventListener('click', openDelivery);
 modalDelivery.addEventListener('click', closeDelivery);
 deliveryMenu.addEventListener('click', openDeliveryMenu);
 deliveryMenuPickup.addEventListener('click', closeDeliveryMenu);
+burgerDescriptionOpen.addEventListener('click', openBurgerDescription);
+burgerDescription.addEventListener('click', closeBurgerDescription);
 
 
 
