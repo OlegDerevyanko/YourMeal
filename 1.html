@@ -9,87 +9,279 @@
   <title>CSS - Стилизация радиокнопки</title>
   <style>
     /* для элемента input c type="radio" */
-  .fieldset__input {
+  /* Стили для модального окна */
+.food__burger-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    width: 90%;
+    max-width: 500px;
+}
+
+.food__burger-modal.active {
+  display: flex;
+    flex-direction: column;
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;  
+}
+
+.delivery__modal-close-btn {
     position: absolute;
-    z-index: -1;
-    opacity: 0;
-  }
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
 
-  /* для элемента label связанного с .custom-radio */
-  .fieldset__input+label {
-    display: inline-flex;
+.delivery__modal-close-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.food__burger-modal-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.food__burger-modal-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.food__burger-modal-description {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.food__burger-modal-ingredients-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.food__burger-modal-ingredients-list {
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+.food__burger-modal-ingredients-item {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.food__burger-modal-ingredients-weight {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.food__burger-modal-btns {
+    display: flex;
     align-items: center;
-    user-select: none;
-  }
+    gap: 10px;
+    margin-bottom: 10px;
+}
 
-  /* создание в label псевдоэлемента  before со следующими стилями */
-  .fieldset__input+label::before {
-    content: '';
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    flex-shrink: 0;
-    flex-grow: 0;
-    border: 1px solid #F2F2F3;
-    border-radius: 50%;
-    margin-right: 0.5em;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: 100%;
-  }
+.food__burger-addbtn {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-  /* стили при наведении курсора на радио */
-  .fieldset__input:not(:disabled):not(:checked)+label:hover::before {
-    border-color: #F2F2F3;
-  }
+.food__burger-addbtn:hover {
+    background-color: #218838;
+}
 
-  /* стили для активной радиокнопки (при нажатии на неё) */
-  .fieldset__input:not(:disabled):active+label::before {
-    background-color: #FFFFFF;;
-    border-color: #F2F2F3;
-  }
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
-  /* стили для радиокнопки, находящейся в состоянии checked */
-  .fieldset__input:checked+label::before {
-    border-color: #F2F2F3;
-    background-image: url(/images/Group-9.svg);
-  }
+.quantity-controls__btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-    body {
-      padding: 20px 50px;
-    }
+.quantity-controls__btn:hover {
+    background-color: #0056b3;
+}
 
-    .radio {
-      margin-bottom: 0.4em;
-    }
+.quantity-controls__quantity {
+    font-size: 16px;
+}
+
+.food__burger-modal-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 10px;
+}
   </style>
 
 </head>
 
 <body>
 
-  <div class="radio">
-    <input class="custom-radio" type="radio" id="color-1" name="color" value="indigo" checked>
-    <label for="color-1">Indigo</label>
-  </div>
+  <section class="food">
+    <div class="food__container">
+        <h2 class="food__title">Бургери</h2>
+        <ul class="food__burger-list">
+            <li class="food__burger-item">
+                <img class="food__burger-img" src="./images/burger-bomba.png" width="137px" height="120px" alt="">
+                <p class="food__burger-price">350₴</p>
+                <p class="food__burger-name">М'ясна бомба</p>
+                <p class="food__burger-weight">512г</p>
+                <button class="food__burger-btn">Додати</button>
+            </li>
+            <li class="food__burger-item">
+                <img class="food__burger-img" src="./images/burger-italian.png" width="137px" height="120px" alt="">
+                <p class="food__burger-price">300₴</p>
+                <p class="food__burger-name">Італьянський</p>
+                <p class="food__burger-weight">480г</p>
+                <button class="food__burger-btn">Додати</button>
+            </li>
+            <li class="food__burger-item">
+                <img class="food__burger-img" src="./images/burger-super.png" width="137px" height="120px" alt="">
+                <p class="food__burger-price">280₴</p>
+                <p class="food__burger-name">Ситний</p>
+                <p class="food__burger-weight">580г</p>
+                <button class="food__burger-btn">Додати</button>
+            </li>
+            <li class="food__burger-item">
+                <img class="food__burger-img" src="./images/burger-cheese.png" width="137px" height="120px" alt="">
+                <p class="food__burger-price">320₴</p>
+                <p class="food__burger-name">Супер Сирний</p>
+                <p class="food__burger-weight">510г</p>
+                <button class="food__burger-btn">Додати</button>
+            </li>
+        </ul>
+    </div>
+</section>
 
-  <div class="radio">
-    <input class="custom-radio" type="radio" id="color-2" name="color" value="red">
-    <label for="color-2">Red</label>
-  </div>
+<!-- Модальное окно -->
+<div class="food__burger-modal" id="food-modal">
+    <div class="food__burger-modal-container">
+        <h2 class="food__burger-modal-title" id="modal-title">М'ясна бомба</h2>
+        <img class="food__burger-modal-img" id="modal-img" src="./images/burger-bomba.png" width="300px" height="232px" alt="">
+        <p class="food__burger-modal-description" id="modal-description">Супер мясное наслаждение! Большая рубленая котлета из свежего говяжего мяса покорит вас своей сочностью, а хрустящие листья салата добавят свежести.</p>
+        <div class="food__burger-modal-ingredients">
+            <h3 class="food__burger-modal-ingredients-title">Склад:</h3>
+            <ul class="food__burger-modal-ingredients-list" id="modal-ingredients">
+                <!-- Ингредиенты будут добавлены динамически -->
+            </ul>
+            <p class="food__burger-modal-ingredients-weight" id="modal-weight">512г, ккал 430</p>
+        </div>
+        <div class="food__burger-modal-btns">
+            <button class="food__burger-addbtn" id="modal-add-btn">Додати</button>
+            <div class="quantity-controls">
+                <button class="quantity-controls__btn" id="modal-decrease-btn">-</button>
+                <span class="quantity-controls__quantity" id="modal-quantity">1</span>
+                <button class="quantity-controls__btn" id="modal-increase-btn">+</button>
+            </div>
+        </div>
+        <p class="food__burger-modal-price" id="modal-price">350₴</p>
+    </div>
+    <div class="delivery__modal-close-btn" id="modal-close-btn">
+        <svg class="delivery__modal-close-icon" width="24px" height="24px" aria-hidden="true">
+            <use href="./images/icons.svg#icon-close"></use>
+        </svg>
+    </div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const foodModal = document.querySelector('.food__burger-modal');
+    const modalCloseBtn = document.getElementById('modal-close-btn');
+    const addToCartButtons = document.querySelectorAll('.food__burger-btn');
 
-  
+    // Данные для модального окна (можно расширить для каждого бургера)
+    const burgersData = {
+        "М'ясна бомба": {
+            img: "./images/burger-bomba.png",
+            description: "Супер мясное наслаждение! Большая рубленая котлета из свежего говяжего мяса покорит вас своей сочностью, а хрустящие листья салата добавят свежести.",
+            ingredients: [
+                "Пшенична булочка",
+                "Котлета з телятини",
+                "Червона цибуля",
+                "Листя салата",
+                "Соус гірчичний"
+            ],
+            weight: "512г, ккал 430",
+            price: "350₴"
+        },
+        "Італьянський": {
+            img: "./images/burger-italian.png",
+            description: "Итальянский вкус в каждом кусочке!",
+            ingredients: [
+                "Булочка с кунжутом",
+                "Котлета из курицы",
+                "Помидоры",
+                "Сыр моцарелла",
+                "Соус песто"
+            ],
+            weight: "480г, ккал 400",
+            price: "300₴"
+        },
+        // Добавьте данные для остальных бургеров
+    };
 
-  <div class="radio">
-    <input class="custom-radio" type="radio" id="color-4" name="color" value="yellow">
-    <label for="color-4">Yellow</label>
-  </div>
+    // Открытие модального окна
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const burgerName = this.parentElement.querySelector('.food__burger-name').innerText;
+            const burgerData = burgersData[burgerName];
 
-  <div class="radio">
-    <input class="custom-radio" type="radio" id="color-5" name="color" value="green">
-    <label for="color-5">Green</label>
-  </div>
+            if (burgerData) {
+                // Заполняем модальное окно данными
+                document.getElementById('modal-title').innerText = burgerName;
+                document.getElementById('modal-img').src = burgerData.img;
+                document.getElementById('modal-description').innerText = burgerData.description;
+                document.getElementById('modal-weight').innerText = burgerData.weight;
+                document.getElementById('modal-price').innerText = burgerData.price;
 
+                // Очищаем и заполняем список ингредиентов
+                const ingredientsList = document.getElementById('modal-ingredients');
+                ingredientsList.innerHTML = burgerData.ingredients
+                    .map(ingredient => `<li class="food__burger-modal-ingredients-item">${ingredient}</li>`)
+                    .join('');
+
+                // Открываем модальное окно
+                foodModal.classList.add('active');
+            }
+        });
+    });
+
+    // Закрытие модального окна
+    modalCloseBtn.addEventListener('click', function() {
+        foodModal.classList.remove('active');
+    });
+
+    // Закрытие модального окна при клике вне его области
+    document.addEventListener('click', function(event) {
+        if (!foodModal.contains(event.target)) {
+            foodModal.classList.remove('active');
+        }
+    });
+});
+</script>
 </body>
 
 </html>

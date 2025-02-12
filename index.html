@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouMeal</title>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
@@ -54,42 +54,48 @@
                     <img src="./images/noodles-menu.png" alt="">
                     <p class="categories__menu-text">Вок</p>
                 </li>
-            </ul>            
+            </ul>
+        </section> 
+        <section class="food">
+            <!-- Мини корзина + модальное окно корзины + модальное окно доставки-->    
             <div class="basket">
                 <button class="basket__btn">
                     Корзина
                     <spon class="basket__total" id="mini-cart-quantity">0</span>
                 </button>
-                <div class="basket__modal">
-                    <div class="modal__title">
-                        <h2 class="basket__name">Корзина</h2>
-                        <span class="basket__total" id="total-quantity">0</span>
+                <!-- Модальное окно корзины -->
+                <div class="basket-modal">
+                    <div class="basket-modal__title">
+                        <h2 class="basket-modal__name">Корзина</h2>
+                        <span class="basket-modal__title-total" id="total-quantity">0</span>
                     </div>
-                    <ul class="modal__list" id="cart-items">
+                    <ul class="basket-modal__list" id="cart-items">
 
                     </ul>
-                    <div class="modal__total">
-                        <p class="modal__total-text">Всього</p>
-                        <p class="modal__total-text total-price">
+                    <div class="basket-modal__total">
+                        <p class="basket-modal__total-text">Всього</p>
+                        <p class="basket-modal__total-text total-price">
                             <span id="total-price">0</span>₴
                         </p>
                         
                     </div>
-                    <button class="modal__btn">Оформити замовлення</button>
-                    <div class="modal__end">
-                        <div class="modal__end-container">
-                            <img class="modal__end-img" src="./images/delivery.svg" width="24px" height="24px" alt="">                            
-                            <p class="modal__end-text">Безкоштовна доставка</p>
+                    <button class="basket-modal__open-delivery-btn">Оформити замовлення</button>
+                    <div class="basket-modal__end">
+                        <div class="basket-modal__end-container">
+                            <img class="basket-modal__end-img" src="./images/delivery.svg" width="24px" height="24px" alt="">                            
+                            <p class="basket-modal__end-text">Доставка</p>
                         </div>
-                        <p class="modal__end-close">Згорнути</p>
+                        <p class="basket-modal__end-close">Згорнути</p>
                     </div>
-                    <div class="delivery__modal">
-                        <div class="delivery__modal-container">
-                            <div class="delivery__modal-header">
-                                <h2 class="delivery__modal-title">Доставка</h2>
-                                <input class="delivery__modal-input-name" type="text" name="name" placeholder="Ваше і'мя" required minlength="4"/>
-                                <input class="delivery__modal-input-tel" type="tel" name="phone" placeholder="Номер телефону" required minlength="7"/>
-                                <fieldset>
+                    <!-- Модальное окно подтверждения заказа -->
+                    <div class="delivery-modal">
+                        <div class="delivery-modal__container">
+                            <div class="delivery-modal__header">
+                                <h2 class="delivery-modal__title">Доставка</h2>
+                                <form action="">
+                                    <input class="delivery-modal__input-name" type="text" name="name" placeholder="Ваше і'мя" required minlength="4"/>
+                                <input class="delivery-modal__input-tel" type="tel" name="phone" placeholder="Номер телефону" required minlength="7"/>
+                                <fieldset class="fieldset">
                                     <div class="fieldset__containers input__pickup">
                                         <input class="fieldset__input " type="radio" id="pickup"
                                         name="delivery" value="pickup" checked />
@@ -101,26 +107,27 @@
                                         <label class="fieldset__label" for="delivery">Доставка</label>
                                     </div>
                                 </fieldset>
-                                <div class="delivery__modal-delivery">
-                                    <input class="delivery__modal-input-address" type="text" name="address" placeholder="Вулиця" required minlength="4" />
-                                <div class="delivery__modal-input2-container">
-                                    <input class="delivery__modal-input-address" type="text" name="address" placeholder="№ Будинку"/>
-                                    <input class="delivery__modal-input-address" type="text" name="address" placeholder="Квартира"/>
+                                <div class="delivery-modal__address">
+                                    <div class="">
+                                        <input class="delivery-modal__input-address" type="text" name="address" placeholder="Вулиця" required minlength="4" />
+                                    <div class="delivery-modal__input2-container">
+                                        <input class="delivery-modal__input-address" type="text" name="address" placeholder="№ Будинку"/>
+                                        <input class="delivery-modal__input-address" type="text" name="address" placeholder="Квартира"/>
+                                    </div>
+                                    </div>
                                 </div>
-                                </div>
+                                </form>
                             </div>            
-                            <button type="submit" class="delivery__modal-btn">Оформити</button>
-                            <div class="delivery__modal-close-btn">
-                                <svg class="delivery__modal-close-icon" width="24px" height="24px" aria-hidden="true">
+                            <button type="submit" class="delivery-modal__submit-btn">Оформити</button>
+                            <div class="delivery-modal__close-btn">
+                                <svg class="delivery-modal__close-icon" width="24px" height="24px" aria-hidden="true">
                                     <use href="./images/icons.svg#icon-close"></use>
                                 </svg>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>            
-        </section> 
-        <section class="food">
+            </div> 
             <div class="food__container">
                 <h2 class="food__title">Бургери</h2>
                 <ul class="food__burger-list">
@@ -129,28 +136,28 @@
                         <p class="food__burger-price">350₴</p>
                         <p class="food__burger-name">М'ясна бомба</p>
                         <p class="food__burger-weight">512г</p>
-                        <button class="food__burger-btn">Додати</button>
+                        <button class="food__burger-addbtn">Додати</button>
                     </li>
                     <li class="food__burger-item">
                         <img class="food__burger-img" src="./images/burger-italian.png" width="137px" height="120px" alt="">
                         <p class="food__burger-price">300₴</p>
                         <p class="food__burger-name">Італьянський</p>
                         <p class="food__burger-weight">480г</p>
-                        <button class="food__burger-btn">Додати</button>
+                        <button class="food__burger-addbtn">Додати</button>
                     </li>
                     <li class="food__burger-item">
                         <img class="food__burger-img" src="./images/burger-super.png" width="137px" height="120px" alt="">
                         <p class="food__burger-price">280₴</p>
                         <p class="food__burger-name">Ситний</p>
                         <p class="food__burger-weight">580г</p>
-                        <button class="food__burger-btn">Додати</button>
+                        <button class="food__burger-addbtn">Додати</button>
                     </li>
                     <li class="food__burger-item">
                         <img class="food__burger-img" src="./images/burger-cheese.png" width="137px" height="120px" alt="">
                         <p class="food__burger-price">320₴</p>
                         <p class="food__burger-name">Супер Сирний</p>
                         <p class="food__burger-weight">510г</p>
-                        <button class="food__burger-btn">Додати</button>
+                        <button class="food__burger-addbtn">Додати</button>
                     </li>
                 </ul>
             </div>
@@ -161,7 +168,7 @@
                     <p class="food__burger-modal-description" id="modal-description">Супер м'ясна насолода! Велика рубана котлета зі свіжого яловичого м'яса підкорить вас своєю соковитістю, а хрумке листя салату додасть свіжості.</p>
                     <div class="food__burger-modal-ingredients">
                         <h3 class="food__burger-modal-ingredients-title">Склад:</h3>
-                        <ul class="food__burger-modal-ingredients-list" id="modal-ingredients">
+                        <ul class="food__burger-modal-ingredients-list">
                             <!-- Ингредиенты будут добавлены динамически -->
                             <li class="food__burger-modal-ingredients-item">Пшенична булочка</li>
                             <li class="food__burger-modal-ingredients-item">Котлета з телятини</li>
@@ -172,8 +179,8 @@
                         <p class="food__burger-modal-ingredients-weight" >512г, ккал 430</p>
                     </div>
                     <div class="food__burger-modal-btns">
-                        <button class="food__burger-addbtn" id="modal-add-btn">Додати</button>
-                        <div class="quantity-controls">
+                        <button class="food__burger-modal-addbtn" >Додати</button>
+                        <div class="food__burger-modal-quantity-controls quantity-controls">
                             <button class="quantity-controls__btn" id="modal-decrease-btn">-</button>
                             <span class="quantity-controls__quantity" id="modal-quantity">1</span>
                             <button class="quantity-controls__btn" id="modal-increase-btn">+</button>
@@ -181,15 +188,13 @@
                     </div>
                     <p class="food__burger-modal-price" >350₴</p>
                 </div>
-                <div class="food__modal-close-btn" >
-                    <svg class="food__modal-close-icon" width="24px" height="24px" aria-hidden="true">
+                <div class="food__burger-modal-close-btn" >
+                    <svg class="food__burger-modal-close-icon" width="24px" height="24px" aria-hidden="true">
                         <use href="./images/icons.svg#icon-close"></use>
                     </svg>
                 </div>
             </div>
-
-        </section>
-        
+        </section>        
     </main>
     <footer class="footer">
         <div class="footer__container">
@@ -236,8 +241,7 @@
             </div>
         </div>
     </footer>
-    
-  
+
     <!-- Карточки товаров -->
     <!-- <ul class="food__burger-list">
         <li class="food__burger-item">
@@ -269,14 +273,10 @@
             <button class="food__burger-btn">добавить</button>
         </li>
     </ul> -->
-
-    
-
-    
-    
-
-    
 </body>
-<script src="modal.js"></script>
-<script src="delivery-modal.js"></script>
+<script src="./js/basket-modal.js"></script>
+<script src="./js/basket.js"></script>
+<script src="./js/delivery-modal.js"></script>
+<script src="./js/burger-modal.js"></script>
+
 </html>
